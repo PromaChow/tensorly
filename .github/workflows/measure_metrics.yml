@@ -1,7 +1,7 @@
 name: analytics
 on:
   push:
-    branches: [ master ]
+    branches: [ master,main ]
 
 jobs:
   analyze:
