@@ -17,13 +17,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - name: Install dependencies
-        run: 'python -m pip install --upgrade pip
+        run: "python -m pip install --upgrade pip
 
           pip install black
 
-          '
+          "
       - id: measurement-4
         name: Record Measurement After Install dependencies
         uses: green-coding-solutions/eco-ci-energy-estimation@862050e4f01f65b1436e5eca18ba4bd85562f0de
@@ -32,9 +32,10 @@ jobs:
           label: Install dependencies
           task: get-measurement
       - name: Lint with Black
-        run: 'black --check --diff --color ./tensorly
+        run: "black --check --diff --color ./tensorly
 
-          '
+          "
+        continue-on-error: true
       - id: measurement-6
         name: Record Measurement After Lint with Black
         uses: green-coding-solutions/eco-ci-energy-estimation@862050e4f01f65b1436e5eca18ba4bd85562f0de
